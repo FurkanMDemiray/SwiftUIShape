@@ -8,7 +8,7 @@
 import SwiftUI
 import Foundation
 
-struct _CircularShape: Shape {
+struct CircularShape: Shape {
 
     var percent: Double
     var startAngle: Double

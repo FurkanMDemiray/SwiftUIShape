@@ -8,14 +8,27 @@
 import SwiftUI
 
 struct ContentView: View {
+
+
+    @State var firstPercent: Double = 0
+
     var body: some View {
-        VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundStyle(.tint)
-            Text("Hello, world!")
+        ZStack {
+
+            Circular(lineWidth: 40,
+                percent: firstPercent,
+                foregroundColor: Color.blue,
+                backgroundColor: Color.blue.opacity(0.2))
+                .padding(20)
+                .frame(width: 400, height: 400, alignment: .center)
+                .onTapGesture {
+                if self.firstPercent == 0 {
+                    self.firstPercent = 50
+                } else {
+                    self.firstPercent = 0
+                }
+            }
         }
-        .padding()
     }
 }
 
