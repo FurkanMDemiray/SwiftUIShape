@@ -20,11 +20,12 @@ struct Circular: View {
                 CircularShape()
                     .stroke(style: StrokeStyle(lineWidth: lineWidth))
                     .fill(backgroundColor)
-                
+
                 CircularShape(percent: percent)
                     .stroke(style: StrokeStyle(lineWidth: lineWidth))
                     .fill(foregroundColor)
-            }.padding(lineWidth / 1.2)
+            }.animation(.easeIn(duration: 1), value: percent)
+                .padding(lineWidth / 1.2)
         }
     }
 }
